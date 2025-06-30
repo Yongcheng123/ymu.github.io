@@ -35,7 +35,13 @@ Visit: [https://ymu.github.io](https://ymu.github.io)
 ## 🔧 Local Development
 1. Clone the repository
 2. Open `index.html` in your browser
-3. For AI features, add your Gemini API key to the JavaScript section
+3. **Note**: AI features are currently disabled for security reasons
+
+## 🔒 Security Note
+API keys should never be stored in client-side code. For production use with AI features, consider:
+- Using a backend service to proxy API calls
+- Hosting on platforms that support environment variables
+- Implementing server-side authentication
 
 ## 📞 Contact
 - **Email**: ymu004@odu.edu

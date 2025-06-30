@@ -290,35 +290,9 @@
 
             // --- Gemini API Call Function ---
             async function callGemini(prompt) {
-                const apiKey = "AIzaSyBp6o0qoGvNZsNGSbbSpos68_6NKbdyqqU";
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-                const payload = { contents: [{ role: "user", parts: [{ text: prompt }] }] };
-
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (!response.ok) {
-                        throw new Error(`API request failed with status ${response.status}`);
-                    }
-
-                    const result = await response.json();
-                    
-                    if (result.candidates && result.candidates.length > 0 &&
-                        result.candidates[0].content && result.candidates[0].content.parts &&
-                        result.candidates[0].content.parts.length > 0) {
-                            return result.candidates[0].content.parts[0].text;
-                    } else {
-                        console.error("Unexpected API response structure:", result);
-                        return "Sorry, I couldn't get a response. The API returned an unexpected format.";
-                    }
-                } catch (error) {
-                    console.error("Error calling Gemini API:", error);
-                    return "Sorry, there was an error communicating with the AI. Please check the console for details.";
-                }
+                // API calls should go through a backend service for security
+                // For now, AI features are disabled to protect the API key
+                return "AI features are temporarily disabled for security reasons. The API key has been removed from the client-side code to prevent unauthorized access.";
             }
 
             // --- Modal Control Functions ---
