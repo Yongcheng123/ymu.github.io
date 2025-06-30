@@ -12,50 +12,30 @@ Visit: [https://ymu.github.io](https://ymu.github.io)
 - Computer Vision Applications
 
 ## ✨ Features
-- Responsive design optimized for all devices
-- Interactive AI-powered content explanations
-- Modern UI with Tailwind CSS
-- Direct links to publications and projects
+- Clean, professional design optimized for all devices
+- Responsive layout with modern UI using Tailwind CSS
+- Direct links to publications and research projects
+- Easy-to-navigate sections for experience, education, and contact
 
 ## 🛠️ Technologies Used
 - HTML5 & CSS3
-- Tailwind CSS
-- JavaScript (ES6+)
-- Google Gemini AI API
+- Tailwind CSS for styling
+- JavaScript for interactive elements
 - GitHub Pages for hosting
 
 ## 📁 Repository Structure
 ```
 ├── index.html              # Main portfolio page
 ├── Yongcheng-Mu-Resume.pdf # Resume (to be added)
-├── favicon.ico             # Site icon (to be added)
+├── robots.txt              # SEO optimization
+├── .gitignore              # Version control
 └── README.md               # This file
 ```
 
 ## 🔧 Local Development
 1. Clone the repository
 2. Open `index.html` in your browser
-3. **Note**: AI features work only when deployed on Netlify (see deployment section)
-
-## 🚀 Secure Deployment with AI Features (Netlify)
-To enable AI features securely:
-
-1. **Fork/Import to Netlify**:
-   - Go to [netlify.com](https://netlify.com)
-   - Click "New site from Git"
-   - Connect your GitHub repository
-
-2. **Add Environment Variable**:
-   - In Netlify dashboard → Site settings → Environment variables
-   - Add: `GEMINI_API_KEY` = `AIzaSyBp6o0qoGvNZsNGSbbSpos68_6NKbdyqqU`
-
-3. **Deploy**: Netlify will automatically deploy with secure AI features
-
-## 🔒 Security Features
-- ✅ API key stored securely in environment variables
-- ✅ Backend serverless function protects API calls  
-- ✅ No sensitive data exposed in client-side code
-- ✅ Rate limiting and error handling built-in
+3. That's it! The portfolio is ready to view
 
 ## 📞 Contact
 - **Email**: ymu004@odu.edu

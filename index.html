@@ -12,45 +12,7 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Styles for the modal */
-        #ai-modal.hidden {
-            display: none;
-        }
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        .modal-content {
-            background: white;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            max-width: 500px;
-            width: 90%;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            position: relative;
-        }
-         /* Simple spinner */
-        .spinner {
-            border: 4px solid rgba(0, 0, 0, 0.1);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border-left-color: #0ea5e9; /* sky-500 */
-            animation: spin 1s ease infinite;
-            margin: 2rem auto;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
+
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
@@ -94,7 +56,7 @@
             <p class="text-slate-700 leading-relaxed">
                 I am a dedicated and analytical Ph.D. candidate in Computer Science at Old Dominion University with a strong background in machine learning, deep learning, and data analysis. My research focuses on developing innovative computational tools, particularly in the realm of bioinformatics and dietary analysis using deep learning techniques. I am passionate about solving complex problems and collaborating on impactful research projects.
             </p>
-            <button class="ai-button mt-4 bg-teal-100 text-teal-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-teal-200 transition-colors" data-type="summary">Generate Research Summary ✨</button>
+
         </section>
 
         <!-- Experience Section -->
@@ -181,7 +143,6 @@
                         <p class="text-sm text-slate-500 mt-1">Published in: Bioinformatics Advances, 2024</p>
                     </div>
                     <div class="mt-4 flex-shrink-0 flex items-center space-x-2 self-start sm:self-end w-full sm:w-auto">
-                        <button class="ai-button bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-indigo-200 transition-colors" data-type="publication">Explain this ✨</button>
                         <a href="https://doi.org/10.1093/bioadv/vbae169" target="_blank" rel="noopener noreferrer" class="bg-sky-100 text-sky-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-sky-200 transition-colors">Read Paper</a>
                     </div>
                 </div>
@@ -193,7 +154,6 @@
                         <p class="text-sm text-slate-500 mt-1">Published in: Proceedings of the 14th ACM International Conference on Bioinformatics, Computational Biology and Health Informatics (ACM-BCB), 2023</p>
                     </div>
                     <div class="mt-4 flex-shrink-0 flex items-center space-x-2 self-start sm:self-end w-full sm:w-auto">
-                        <button class="ai-button bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-indigo-200 transition-colors" data-type="publication">Explain this ✨</button>
                         <a href="https://doi.org/10.1145/3584371.3612947" target="_blank" rel="noopener noreferrer" class="bg-sky-100 text-sky-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-sky-200 transition-colors">Read Paper</a>
                     </div>
                 </div>
@@ -205,7 +165,6 @@
                         <p class="text-sm text-slate-500 mt-1">Published in: 2022 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)</p>
                    </div>
                    <div class="mt-4 flex-shrink-0 flex items-center space-x-2 self-start sm:self-end w-full sm:w-auto">
-                       <button class="ai-button bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-indigo-200 transition-colors" data-type="publication">Explain this ✨</button>
                        <a href="https://ieeexplore.ieee.org/document/9995469" target="_blank" rel="noopener noreferrer" class="bg-sky-100 text-sky-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-sky-200 transition-colors">Read Paper</a>
                    </div>
                 </div>
@@ -217,7 +176,6 @@
                         <p class="text-sm text-slate-500 mt-1">Published in: Frontiers in Bioinformatics, 2021</p>
                     </div>
                     <div class="mt-4 flex-shrink-0 flex items-center space-x-2 self-start sm:self-end w-full sm:w-auto">
-                        <button class="ai-button bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-indigo-200 transition-colors" data-type="publication">Explain this ✨</button>
                         <a href="https://doi.org/10.3389/fbinf.2021.710119" target="_blank" rel="noopener noreferrer" class="bg-sky-100 text-sky-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-sky-200 transition-colors">Read Paper</a>
                     </div>
                 </div>
@@ -229,7 +187,6 @@
                         <p class="text-sm text-slate-500 mt-1">Published in: Proceedings of the 11th ACM International Conference on Bioinformatics, Computational Biology and Health Informatics (ACM-BCB), 2020</p>
                     </div>
                     <div class="mt-4 flex-shrink-0 flex items-center space-x-2 self-start sm:self-end w-full sm:w-auto">
-                        <button class="ai-button bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-indigo-200 transition-colors" data-type="publication">Explain this ✨</button>
                         <a href="https://doi.org/10.1145/3388440.3414710" target="_blank" rel="noopener noreferrer" class="bg-sky-100 text-sky-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-sky-200 transition-colors">Read Paper</a>
                     </div>
                 </div>
@@ -263,106 +220,12 @@
             <p class="text-sm text-slate-500">&copy; <span id="current-year"></span> Yongcheng Mu. All Rights Reserved.</p>
         </footer>
     </div>
-    
-    <!-- AI Modal -->
-    <div id="ai-modal" class="hidden">
-        <div class="modal-overlay">
-            <div class="modal-content">
-                <button id="close-modal" class="absolute top-2 right-4 text-2xl font-bold text-slate-600 hover:text-slate-900">&times;</button>
-                <h3 id="modal-title" class="text-xl font-bold text-slate-900 mb-4">AI-Generated Content</h3>
-                <div id="modal-body">
-                    <div class="spinner"></div>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Set the current year in the footer
             document.getElementById('current-year').textContent = new Date().getFullYear();
-
-            const modal = document.getElementById('ai-modal');
-            const closeModalBtn = document.getElementById('close-modal');
-            const modalTitle = document.getElementById('modal-title');
-            const modalBody = document.getElementById('modal-body');
-            const aiButtons = document.querySelectorAll('.ai-button');
-
-            // --- Gemini API Call Function ---
-            async function callGemini(prompt) {
-                try {
-                    // Call secure backend endpoint instead of directly calling Gemini
-                    const response = await fetch('/api/gemini', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ prompt: prompt })
-                    });
-
-                    if (!response.ok) {
-                        throw new Error(`Backend request failed with status ${response.status}`);
-                    }
-
-                    const result = await response.json();
-                    return result.text || "Sorry, I couldn't generate a response.";
-                } catch (error) {
-                    console.error("Error calling secure backend:", error);
-                    return "AI features require deployment on Netlify with environment variables configured. This ensures your API key remains secure.";
-                }
-            }
-
-            // --- Modal Control Functions ---
-            function showModal() {
-                modal.classList.remove('hidden');
-                modalBody.innerHTML = '<div class="spinner"></div>'; // Show spinner on open
-            }
-
-            function hideModal() {
-                modal.classList.add('hidden');
-            }
-
-            // --- Event Listeners ---
-            closeModalBtn.addEventListener('click', hideModal);
-            modal.querySelector('.modal-overlay').addEventListener('click', (e) => {
-                if (e.target === e.currentTarget) {
-                    hideModal();
-                }
-            });
-
-            aiButtons.forEach(button => {
-                button.addEventListener('click', async () => {
-                    const type = button.dataset.type;
-                    let prompt = '';
-                    let title = '';
-
-                    if (type === 'summary') {
-                        title = '✨ AI Research Summary';
-                        let portfolioText = 'Projects:\n';
-                        document.querySelectorAll('#projects .flex-col').forEach(proj => {
-                            const pTitle = proj.querySelector('h3').innerText;
-                            const pDesc = proj.querySelector('p').innerText;
-                            portfolioText += `- ${pTitle}: ${pDesc}\n`;
-                        });
-                        portfolioText += '\nPublications:\n';
-                        document.querySelectorAll('#publications .publication-title').forEach(pub => {
-                            portfolioText += `- ${pub.innerText}\n`;
-                        });
-                        prompt = `As an expert in scientific communication, analyze the following research portfolio of Yongcheng Mu, a Ph.D. candidate. Synthesize a concise, professional summary (about 2-3 sentences) of his primary research focus and expertise for a recruiter. Portfolio:\n\n${portfolioText}\n\nFocus on the recurring themes like deep learning, bioinformatics, and computational tool development.`;
-                    
-                    } else if (type === 'publication') {
-                        const pub_title = button.closest('.bg-white').querySelector('.publication-title').innerText;
-                        title = '✨ AI Explanation';
-                        prompt = `Explain the following research paper title in simple, accessible terms for a non-expert audience (e.g., a recruiter). Focus on the 'what' and 'why' it's important. Keep it concise (2-3 sentences). Title: "${pub_title}"`;
-                    }
-
-                    modalTitle.textContent = title;
-                    showModal();
-
-                    const response = await callGemini(prompt);
-                    // Basic markdown-to-HTML conversion for lists and paragraphs
-                    const formattedResponse = response.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>').replace(/\* /g, '<br>&bull; ');
-                    modalBody.innerHTML = `<p class="text-slate-700 leading-relaxed">${formattedResponse}</p>`;
-                });
-            });
         });
     </script>
 </body>
