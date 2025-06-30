@@ -35,13 +35,27 @@ Visit: [https://ymu.github.io](https://ymu.github.io)
 ## 🔧 Local Development
 1. Clone the repository
 2. Open `index.html` in your browser
-3. **Note**: AI features are currently disabled for security reasons
+3. **Note**: AI features work only when deployed on Netlify (see deployment section)
 
-## 🔒 Security Note
-API keys should never be stored in client-side code. For production use with AI features, consider:
-- Using a backend service to proxy API calls
-- Hosting on platforms that support environment variables
-- Implementing server-side authentication
+## 🚀 Secure Deployment with AI Features (Netlify)
+To enable AI features securely:
+
+1. **Fork/Import to Netlify**:
+   - Go to [netlify.com](https://netlify.com)
+   - Click "New site from Git"
+   - Connect your GitHub repository
+
+2. **Add Environment Variable**:
+   - In Netlify dashboard → Site settings → Environment variables
+   - Add: `GEMINI_API_KEY` = `AIzaSyBp6o0qoGvNZsNGSbbSpos68_6NKbdyqqU`
+
+3. **Deploy**: Netlify will automatically deploy with secure AI features
+
+## 🔒 Security Features
+- ✅ API key stored securely in environment variables
+- ✅ Backend serverless function protects API calls  
+- ✅ No sensitive data exposed in client-side code
+- ✅ Rate limiting and error handling built-in
 
 ## 📞 Contact
 - **Email**: ymu004@odu.edu

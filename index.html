@@ -290,9 +290,24 @@
 
             // --- Gemini API Call Function ---
             async function callGemini(prompt) {
-                // API calls should go through a backend service for security
-                // For now, AI features are disabled to protect the API key
-                return "AI features are temporarily disabled for security reasons. The API key has been removed from the client-side code to prevent unauthorized access.";
+                try {
+                    // Call secure backend endpoint instead of directly calling Gemini
+                    const response = await fetch('/api/gemini', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ prompt: prompt })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Backend request failed with status ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    return result.text || "Sorry, I couldn't generate a response.";
+                } catch (error) {
+                    console.error("Error calling secure backend:", error);
+                    return "AI features require deployment on Netlify with environment variables configured. This ensures your API key remains secure.";
+                }
             }
 
             // --- Modal Control Functions ---
