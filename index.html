@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yongcheng Mu - Personal Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Styles for the modal */
+        #ai-modal.hidden {
+            display: none;
+        }
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+         /* Simple spinner */
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border-left-color: #0ea5e9; /* sky-500 */
+            animation: spin 1s ease infinite;
+            margin: 2rem auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Main Container -->
+    <div class="container mx-auto max-w-4xl p-4 sm:p-6 lg:p-8">
+
+        <!-- Header Section -->
+        <header class="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between mb-12">
+            <div>
+                <h1 class="text-4xl font-bold text-slate-900">Yongcheng Mu</h1>
+                <p class="text-xl text-sky-700 mt-1">Ph.D. Candidate in Computer Science</p>
+            </div>
+            <div class="mt-4 sm:mt-0 text-sm text-slate-600 flex flex-col items-start sm:items-end space-y-2">
+                 <div class="flex items-center space-x-4">
+                    <a href="https://scholar.google.com/citations?user=NlTvPMYAAAAJ&hl=en&authuser=1&oi=ao" target="_blank" rel="noopener noreferrer" class="hover:text-sky-700 transition-colors" title="Google Scholar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-mortarboard-fill" viewBox="0 0 16 16"><path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0l7.5-3a.5.5 0 0 0 .025-.917l-7.5-3.5zM8 8.46 1.758 5.965 8 3.052l6.242 2.913L8 8.46z"/><path d="M4.5 12.5a.5.5 0 0 0 .5.5h6a.5.5 0 0 0 .5-.5v-5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0-.5.5v5zM5 10.024v2.952H4.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5H11.5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H11v-2.952a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v2.468-1.446a.5.5 0 1 0-.894.448l.5 1.707L8 12.46l-.278-.938a.5.5 0 1 0-.895.448l.5 1.707V10.52a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5z"/></svg>
+                    </a>
+                    <!-- Updated GitHub Link -->
+                    <a href="https://github.com/Yongcheng123" target="_blank" rel="noopener noreferrer" class="hover:text-sky-700 transition-colors" title="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                    </a>
+                    <a href="Yongcheng-Mu-Resume.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-sky-700 transition-colors" title="Download Resume">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-earmark-person" viewBox="0 0 16 16"><path d="M11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/><path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 1.5v3h3l-3-3zM11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zM11 8a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5zM11 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5z"/></svg>
+                    </a>
+                </div>
+                 <a href="mailto:ymu004@odu.edu" class="flex items-center hover:text-sky-700 transition-colors mt-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope mr-2" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/></svg>
+                    ymu004@odu.edu
+                </a>
+                <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-phone mr-2" viewBox="0 0 16 16"><path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/><path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>
+                    757-201-5313
+                </div>
+            </div>
+        </header>
+
+        <!-- About Section -->
+        <section id="about" class="mb-12">
+            <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-sky-200 pb-2 mb-4">About Me</h2>
+            <p class="text-slate-700 leading-relaxed">
+                I am a dedicated and analytical Ph.D. candidate in Computer Science at Old Dominion University with a strong background in machine learning, deep learning, and data analysis. My research focuses on developing innovative computational tools, particularly in the realm of bioinformatics and dietary analysis using deep learning techniques. I am passionate about solving complex problems and collaborating on impactful research projects.
+            </p>
+            <button class="ai-button mt-4 bg-teal-100 text-teal-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-teal-200 transition-colors" data-type="summary">Generate Research Summary ✨</button>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="mb-12">
+            <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-sky-200 pb-2 mb-6">Work Experience</h2>
+            <div class="space-y-6">
+                <!-- Job 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-slate-800">Graduate Research Assistant</h3>
+                        <span class="text-sm font-medium text-slate-500 text-right">Jan 2021 - Present</span>
+                    </div>
+                    <p class="text-md text-slate-600">ODU Research Foundation | Norfolk, VA</p>
+                    <ul class="mt-4 list-disc list-inside text-slate-700 space-y-1">
+                        <li>Collaborated with faculty to define and refine research objectives.</li>
+                        <li>Conducted extensive data analysis to enhance project performance.</li>
+                        <li>Published research findings in reputable journals and conferences.</li>
+                    </ul>
+                </div>
+                <!-- Job 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-slate-800">Graduate Teaching Assistant</h3>
+                         <span class="text-sm font-medium text-slate-500 text-right">Jan 2021 - Present</span>
+                    </div>
+                    <p class="text-md text-slate-600">Old Dominion University | Norfolk, VA</p>
+                    <ul class="mt-4 list-disc list-inside text-slate-700 space-y-1">
+                        <li>Developed and implemented lesson plans catering to diverse learning styles.</li>
+                        <li>Provided individualized instruction to support student success.</li>
+                    </ul>
+                </div>
+                <!-- Job 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-slate-800">Technician & Research Assistant</h3>
+                         <span class="text-sm font-medium text-slate-500 text-right">Oct 2019 - Jan 2021</span>
+                    </div>
+                    <p class="text-md text-slate-600">ODU Research Foundation (Dept. of Bio-electrics) | Norfolk, VA</p>
+                    <ul class="mt-4 list-disc list-inside text-slate-700 space-y-1">
+                        <li>Designed and built programmable electronic equipment for bio-electrics research.</li>
+                        <li>Analyzed and organized experimental results using Python and Excel.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="mb-12">
+            <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-sky-200 pb-2 mb-6">Projects</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                 <div class="bg-white p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-slate-800">
+                        <a href="https://www.cs.odu.edu/~bioinfo/B2I_Tools/#" target="_blank" rel="noopener noreferrer" class="hover:text-sky-700 transition-colors">
+                            DeepSSETracer
+                        </a>
+                    </h3>
+                    <p class="mt-2 text-slate-700 flex-grow">A Deep Learning-based tool for segmenting density maps obtained from medium-resolution cryo-electron microscopy.</p>
+                    <div class="mt-4">
+                        <a href="https://www.cs.odu.edu/~bioinfo/B2I_Tools/#" target="_blank" rel="noopener noreferrer" class="inline-block bg-sky-100 text-sky-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-sky-200 transition-colors">
+                            Access Tool
+                        </a>
+                    </div>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-slate-800">Diet Quantification</h3>
+                    <p class="mt-2 text-slate-700 flex-grow">A method analyzing dietary composition from food photographs using a smartphone's camera and depth sensor via a Deep Learning approach.</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-sm flex flex-col">
+                    <h3 class="text-lg font-bold text-slate-800">Neurological Tissue Stimulation Antenna</h3>
+                    <p class="mt-2 text-slate-700 flex-grow">Conducted extensive experiments to simulate how electric fields were influenced through an antenna by cells, water, and air.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="mb-12">
+            <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-sky-200 pb-2 mb-6">Publications</h2>
+            <div class="space-y-6">
+                <!-- Publication 2024 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm flex flex-col">
+                    <div class="flex-grow">
+                        <p class="publication-title text-slate-800 font-medium">The Combined Focal Loss and Dice Loss Function Improves the Segmentation of Beta-sheets in Medium-Resolution Cryo-Electron-Microscopy Density Maps</p>
+                        <p class="text-sm italic text-slate-600 mt-2">Authors: Yongcheng Mu, Thu Nguyen, Bryan Hawickhorst, Willy Wriggers, Jiangwen Sun, Jing He</p>
+                        <p class="text-sm text-slate-500 mt-1">Published in: Bioinformatics Advances, 2024</p>
+                    </div>
+                    <div class="mt-4 flex-shrink-0 flex items-center space-x-2 self-start sm:self-end w-full sm:w-auto">
+                        <button class="ai-button bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-indigo-200 transition-colors" data-type="publication">Explain this ✨</button>
+                        <a href="https://doi.org/10.1093/bioadv/vbae169" target="_blank" rel="noopener noreferrer" class="bg-sky-100 text-sky-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-sky-200 transition-colors">Read Paper</a>
+                    </div>
+                </div>
+                <!-- Publication 2023 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm flex flex-col">
+                    <div class="flex-grow">
+                        <p class="publication-title text-slate-800 font-medium">An Approach to Developing Benchmark Datasets for Protein Secondary Structure Segmentation from Cryo-EM Density Maps</p>
+                        <p class="text-sm italic text-slate-600 mt-2">Authors: Thu Nguyen, Yongcheng Mu, Jiangwen Sun, Jing He</p>
+                        <p class="text-sm text-slate-500 mt-1">Published in: Proceedings of the 14th ACM International Conference on Bioinformatics, Computational Biology and Health Informatics (ACM-BCB), 2023</p>
+                    </div>
+                    <div class="mt-4 flex-shrink-0 flex items-center space-x-2 self-start sm:self-end w-full sm:w-auto">
+                        <button class="ai-button bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-indigo-200 transition-colors" data-type="publication">Explain this ✨</button>
+                        <a href="https://doi.org/10.1145/3584371.3612947" target="_blank" rel="noopener noreferrer" class="bg-sky-100 text-sky-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-sky-200 transition-colors">Read Paper</a>
+                    </div>
+                </div>
+                <!-- Publication 2022 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm flex flex-col">
+                   <div class="flex-grow">
+                        <p class="publication-title text-slate-800 font-medium">The Combined Focal Cross Entropy and Dice Loss Function for Segmentation of Protein Secondary Structures from Cryo-EM 3D Density maps</p>
+                        <p class="text-sm italic text-slate-600 mt-2">Authors: Yongcheng Mu, Jiangwen Sun, Jing He</p>
+                        <p class="text-sm text-slate-500 mt-1">Published in: 2022 IEEE International Conference on Bioinformatics and Biomedicine (BIBM)</p>
+                   </div>
+                   <div class="mt-4 flex-shrink-0 flex items-center space-x-2 self-start sm:self-end w-full sm:w-auto">
+                       <button class="ai-button bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-indigo-200 transition-colors" data-type="publication">Explain this ✨</button>
+                       <a href="https://ieeexplore.ieee.org/document/9995469" target="_blank" rel="noopener noreferrer" class="bg-sky-100 text-sky-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-sky-200 transition-colors">Read Paper</a>
+                   </div>
+                </div>
+                <!-- Publication 2021 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm flex flex-col">
+                    <div class="flex-grow">
+                        <p class="publication-title text-slate-800 font-medium">A Tool for Segmentation of Secondary Structures in 3D Cryo-EM Density Map Components Using Deep Convolutional Neural Networks</p>
+                        <p class="text-sm italic text-slate-600 mt-2">Authors: Yongcheng Mu, Salim Sazzed, Maytha Alshammari, Jiangwen Sun, Jing He</p>
+                        <p class="text-sm text-slate-500 mt-1">Published in: Frontiers in Bioinformatics, 2021</p>
+                    </div>
+                    <div class="mt-4 flex-shrink-0 flex items-center space-x-2 self-start sm:self-end w-full sm:w-auto">
+                        <button class="ai-button bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-indigo-200 transition-colors" data-type="publication">Explain this ✨</button>
+                        <a href="https://doi.org/10.3389/fbinf.2021.710119" target="_blank" rel="noopener noreferrer" class="bg-sky-100 text-sky-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-sky-200 transition-colors">Read Paper</a>
+                    </div>
+                </div>
+                <!-- Publication 2020 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm flex flex-col">
+                    <div class="flex-grow">
+                        <p class="publication-title text-slate-800 font-medium">Using Curriculum Learning in Pattern Recognition of 3-dimensional Cryo-electron Microscopy Density Maps</p>
+                        <p class="text-sm italic text-slate-600 mt-2">Authors: Yangmei Deng, Yongcheng Mu, Salim Sazzed, Jiangwen Sun, Jing He</p>
+                        <p class="text-sm text-slate-500 mt-1">Published in: Proceedings of the 11th ACM International Conference on Bioinformatics, Computational Biology and Health Informatics (ACM-BCB), 2020</p>
+                    </div>
+                    <div class="mt-4 flex-shrink-0 flex items-center space-x-2 self-start sm:self-end w-full sm:w-auto">
+                        <button class="ai-button bg-indigo-100 text-indigo-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-indigo-200 transition-colors" data-type="publication">Explain this ✨</button>
+                        <a href="https://doi.org/10.1145/3388440.3414710" target="_blank" rel="noopener noreferrer" class="bg-sky-100 text-sky-800 text-sm font-medium px-4 py-2 rounded-full hover:bg-sky-200 transition-colors">Read Paper</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="mb-12">
+            <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-sky-200 pb-2 mb-6">Education</h2>
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-slate-800">Ph.D. in Computer Science</h3>
+                        <span class="text-sm font-medium text-slate-500 text-right">Jan 2021 - Present</span>
+                    </div>
+                    <p class="text-md text-slate-600">Old Dominion University | Norfolk, VA</p>
+                    <p class="text-md text-slate-600 mt-2">Advisor: <a href="https://www.cs.odu.edu/~jhe/" target="_blank" rel="noopener noreferrer" class="text-sky-700 hover:underline">Dr. Jing He</a></p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                     <div class="flex justify-between items-start">
+                        <h3 class="text-lg font-bold text-slate-800">B.E. in Welding Technology and Engineer</h3>
+                        <span class="text-sm font-medium text-slate-500 text-right">Aug 2009 - Jul 2013</span>
+                    </div>
+                    <p class="text-md text-slate-600">Lanzhou University of Technology | Lanzhou, China</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="text-center mt-12">
+            <p class="text-sm text-slate-500">&copy; <span id="current-year"></span> Yongcheng Mu. All Rights Reserved.</p>
+        </footer>
+    </div>
+    
+    <!-- AI Modal -->
+    <div id="ai-modal" class="hidden">
+        <div class="modal-overlay">
+            <div class="modal-content">
+                <button id="close-modal" class="absolute top-2 right-4 text-2xl font-bold text-slate-600 hover:text-slate-900">&times;</button>
+                <h3 id="modal-title" class="text-xl font-bold text-slate-900 mb-4">AI-Generated Content</h3>
+                <div id="modal-body">
+                    <div class="spinner"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set the current year in the footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            const modal = document.getElementById('ai-modal');
+            const closeModalBtn = document.getElementById('close-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalBody = document.getElementById('modal-body');
+            const aiButtons = document.querySelectorAll('.ai-button');
+
+            // --- Gemini API Call Function ---
+            async function callGemini(prompt) {
+                const apiKey = ""; // Canvas will provide the key
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                const payload = { contents: [{ role: "user", parts: [{ text: prompt }] }] };
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`API request failed with status ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                            return result.candidates[0].content.parts[0].text;
+                    } else {
+                        console.error("Unexpected API response structure:", result);
+                        return "Sorry, I couldn't get a response. The API returned an unexpected format.";
+                    }
+                } catch (error) {
+                    console.error("Error calling Gemini API:", error);
+                    return "Sorry, there was an error communicating with the AI. Please check the console for details.";
+                }
+            }
+
+            // --- Modal Control Functions ---
+            function showModal() {
+                modal.classList.remove('hidden');
+                modalBody.innerHTML = '<div class="spinner"></div>'; // Show spinner on open
+            }
+
+            function hideModal() {
+                modal.classList.add('hidden');
+            }
+
+            // --- Event Listeners ---
+            closeModalBtn.addEventListener('click', hideModal);
+            modal.querySelector('.modal-overlay').addEventListener('click', (e) => {
+                if (e.target === e.currentTarget) {
+                    hideModal();
+                }
+            });
+
+            aiButtons.forEach(button => {
+                button.addEventListener('click', async () => {
+                    const type = button.dataset.type;
+                    let prompt = '';
+                    let title = '';
+
+                    if (type === 'summary') {
+                        title = '✨ AI Research Summary';
+                        let portfolioText = 'Projects:\n';
+                        document.querySelectorAll('#projects .flex-col').forEach(proj => {
+                            const pTitle = proj.querySelector('h3').innerText;
+                            const pDesc = proj.querySelector('p').innerText;
+                            portfolioText += `- ${pTitle}: ${pDesc}\n`;
+                        });
+                        portfolioText += '\nPublications:\n';
+                        document.querySelectorAll('#publications .publication-title').forEach(pub => {
+                            portfolioText += `- ${pub.innerText}\n`;
+                        });
+                        prompt = `As an expert in scientific communication, analyze the following research portfolio of Yongcheng Mu, a Ph.D. candidate. Synthesize a concise, professional summary (about 2-3 sentences) of his primary research focus and expertise for a recruiter. Portfolio:\n\n${portfolioText}\n\nFocus on the recurring themes like deep learning, bioinformatics, and computational tool development.`;
+                    
+                    } else if (type === 'publication') {
+                        const pub_title = button.closest('.bg-white').querySelector('.publication-title').innerText;
+                        title = '✨ AI Explanation';
+                        prompt = `Explain the following research paper title in simple, accessible terms for a non-expert audience (e.g., a recruiter). Focus on the 'what' and 'why' it's important. Keep it concise (2-3 sentences). Title: "${pub_title}"`;
+                    }
+
+                    modalTitle.textContent = title;
+                    showModal();
+
+                    const response = await callGemini(prompt);
+                    // Basic markdown-to-HTML conversion for lists and paragraphs
+                    const formattedResponse = response.replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>').replace(/\* /g, '<br>&bull; ');
+                    modalBody.innerHTML = `<p class="text-slate-700 leading-relaxed">${formattedResponse}</p>`;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
